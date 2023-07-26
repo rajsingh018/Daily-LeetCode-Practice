@@ -2,13 +2,13 @@ class Solution {
 public:
     bool isPalindrome(int x) {
         string str = to_string(x);
-        int i=0, j=str.size()-1;
-        while(i<=j){
-            if(str[i]!=str[j]){
+        int n=0, m=str.size()-1;
+        while(n<=m){
+            if(str[n]!=str[m]){
                 return false;
             }
-            i++;
-            j--;
+            n++;
+            m--;
         }
         return true;
     }
