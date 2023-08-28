@@ -1,21 +1,23 @@
 class Solution {
 public:
     vector<int> generateRow(int row){
-        vector<int> ans;
-        long long k=1;
-        ans.push_back(1);
-        for(int i=1; i<row; i++){
-            k = k * (row - i);
-            k=k/i;
-            ans.push_back(k);
+        int ans=1;
+        vector<int> res;
+        res.push_back(1);
+        for(int col=1; col<row; col++){
+            ans = ans* (row-col);
+            ans = ans/col;
+            res.push_back(ans);
         }
-        return ans;
+        return res;
     }
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> ans;
-        for(int i=1;i<=numRows;i++){
-            ans.push_back(generateRow(i));
+        for(int i=1; i<=numRows; i++){
+            vector<int> v = generateRow(i);
+            ans.push_back(v);
         }
         return ans;
+        
     }
 };
